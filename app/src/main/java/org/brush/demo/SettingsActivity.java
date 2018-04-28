@@ -1,5 +1,6 @@
 package org.brush.demo;
 
+import android.util.Log;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
@@ -16,6 +17,9 @@ import android.app.ActionBar;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.preference.RingtonePreference;
+import android.preference.SwitchPreference;
+import android.preference.Preference.OnPreferenceChangeListener;
+import android.content.SharedPreferences;
 import android.text.TextUtils;
 import android.view.MenuItem;
 
@@ -173,10 +177,29 @@ public class SettingsActivity extends PreferenceActivity {
             addPreferencesFromResource(R.xml.pref_general);
             setHasOptionsMenu(true);
 
+            // Store Preference For Given Data
+            SwitchPreference pref = (SwitchPreference) findPreference("givenData");
+            pref.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
+
+                @Override
+                public boolean onPreferenceChange(Preference preference, Object newValue) {
+                    boolean checked = Boolean.valueOf(newValue.toString());
+                    SharedPreferences prefs = getActivity().getSharedPreferences("Prefer", Context.MODE_PRIVATE);
+                    prefs.edit()
+                            .putBoolean("givenData", checked)
+                            .commit();
+                    Log.d("getData", newValue.toString());
+                    return true;
+                }
+            });
+
+
+
             // Bind the summaries of EditText/List/Dialog/Ringtone preferences
             // to their values. When their values change, their summaries are
             // updated to reflect the new value, per the Android Design
             // guidelines.
+            //bindPreferenceSummaryToValue(findPreference("givenData"));
             bindPreferenceSummaryToValue(findPreference("example_text"));
             bindPreferenceSummaryToValue(findPreference("example_list"));
         }

@@ -41,6 +41,8 @@ import android.util.Log;
 import android.util.Size;
 import android.util.TypedValue;
 import android.view.Display;
+import android.content.SharedPreferences;
+import android.content.Context;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -188,9 +190,21 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
       @Override
       public void run() {
         try {
-          String uri = Uri.parse("http://140.123.97.110:1337/brushTeeth/uploads/imgPost.php")
+
+            SharedPreferences prefs = getSharedPreferences("Prefer", Context.MODE_PRIVATE);
+            boolean checked = prefs.getBoolean("givenData", true);
+            Log.d("check", Boolean.toString(checked));
+
+            if(!checked) {    // Don't agree to collected Data
+                Log.d("UploadTarget", "ByeBye");
+                return;
+            }
+            String uri = Uri.parse("http://140.123.97.110:1337/brushTeeth/uploads/imgPost.php")
                   .buildUpon()
                   .build().toString();
+
+            Log.d("UploadTarget", uri);
+
 
           URL url = new URL(uri);
 
