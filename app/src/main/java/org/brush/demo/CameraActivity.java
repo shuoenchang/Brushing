@@ -30,6 +30,7 @@ import android.util.Log;
 import android.util.Size;
 import android.view.KeyEvent;
 import android.view.WindowManager;
+import android.widget.FrameLayout;
 import android.widget.Toast;
 import java.nio.ByteBuffer;
 import org.brush.demo.env.Logger;
@@ -52,14 +53,15 @@ public abstract class CameraActivity extends Activity implements OnImageAvailabl
     LOGGER.d("onCreate " + this);
     super.onCreate(null);
     getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-
-    setContentView(R.layout.activity_camera);
+    setContentView(R.layout.camera_connection_fragment);
 
     if (hasPermission()) {
       setFragment();
     } else {
       requestPermission();
     }
+
+
   }
 
   @Override
