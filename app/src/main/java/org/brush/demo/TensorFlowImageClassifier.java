@@ -19,6 +19,8 @@ import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.os.Trace;
 import android.util.Log;
+import android.widget.ImageView;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -172,6 +174,7 @@ public class TensorFlowImageClassifier implements Classifier {
             new Recognition(
                 "" + i, labels.size() > i ? labels.get(i) : "unknown", outputs[i] , null));
       }
+
     }
     final ArrayList<Recognition> recognitions = new ArrayList<Recognition>();
     int recognitionsSize = Math.min(pq.size(), MAX_RESULTS);

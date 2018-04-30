@@ -26,6 +26,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
+import android.util.Log;
 import android.util.Size;
 import android.view.KeyEvent;
 import android.view.WindowManager;
@@ -149,7 +150,9 @@ public abstract class CameraActivity extends Activity implements OnImageAvailabl
     }
   }
 
+
   protected void setFragment() {
+
     final Fragment fragment =
         CameraConnectionFragment.newInstance(
             new CameraConnectionFragment.ConnectionCallback() {
@@ -167,6 +170,7 @@ public abstract class CameraActivity extends Activity implements OnImageAvailabl
         .replace(R.id.container, fragment)
         .commit();
   }
+
 
   protected void fillBytes(final Plane[] planes, final byte[][] yuvBytes) {
     // Because of the variable row stride it's not possible to know in

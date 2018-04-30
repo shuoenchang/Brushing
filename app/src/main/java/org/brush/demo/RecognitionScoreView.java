@@ -20,7 +20,11 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.util.TypedValue;
+import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
+import android.view.LayoutInflater;
+
 
 import org.brush.demo.Classifier.Recognition;
 
@@ -61,9 +65,12 @@ public class RecognitionScoreView extends View implements ResultsView {
 
     if (results != null) {
       for (final Recognition recog : results) {
-        canvas.drawText(recog.getTitle() + ": " + recog.getConfidence(), x, y, fgPaint);
+        canvas.drawText(recog.getTitle() , x, y, fgPaint);
+        // canvas.drawText(recog.getTitle() + ": " + recog.getConfidence(), x, y, fgPaint);
         y += fgPaint.getTextSize() * 1.5f;
       }
+
+
     }
   }
 }

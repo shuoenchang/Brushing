@@ -43,6 +43,9 @@ import android.util.TypedValue;
 import android.view.Display;
 import android.content.SharedPreferences;
 import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.ImageView;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -195,6 +198,7 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
             boolean checked = prefs.getBoolean("givenData", true);
             Log.d("check", Boolean.toString(checked));
 
+
             if(!checked) {    // Don't agree to collected Data
                 Log.d("UploadTarget", "ByeBye");
                 return;
@@ -247,6 +251,7 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
     Image image = null;
 
     try {
+
       image = reader.acquireLatestImage();
 
       if (image == null) {
@@ -329,6 +334,8 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
       String encodeImage = Base64.encodeToString(b ,Base64.DEFAULT);
       sentDataPost(encodeImage);
     }
+    //setContentView(R.layout.camera_connection_fragment);
+
 
     runInBackground(
         new Runnable() {
@@ -340,6 +347,22 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
 
             cropCopyBitmap = Bitmap.createBitmap(croppedBitmap);
             resultsView.setResults(results);
+
+            /*------------------Teeth model------------------*/
+            runOnUiThread(new Runnable() {
+              @Override
+              public void run() {
+                String fileName = "tooth_" + results.get(0).getTitle().charAt(0)
+                        + results.get(0).getTitle().charAt(1);
+                int resID = getResources().getIdentifier(fileName , "drawable", getPackageName());
+                ImageView img = (ImageView) findViewById(R.id.tooth_view);
+                img.setImageResource(resID);
+
+              Log.i("TextOutput", fileName);
+            }
+        });
+
+
             requestRender();
             computing = false;
           }
