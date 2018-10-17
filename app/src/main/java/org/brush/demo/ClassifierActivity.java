@@ -81,7 +81,7 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
   // --input_node_names="Mul" \
   // --output_node_names="final_result" \
   // --input_binary=truew
-  private static final int INPUT_SIZE = 224;
+  private static final int INPUT_SIZE = 150;
   private static final int IMAGE_MEAN = 0;
   private static final float IMAGE_STD = 255;
   private static final String INPUT_NAME = "input_5";
@@ -95,7 +95,7 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
 
   private static final boolean MAINTAIN_ASPECT = true;
 
-  private static final Size DESIRED_PREVIEW_SIZE = new Size(150, 150);
+  private static final Size DESIRED_PREVIEW_SIZE = new Size(224, 224);
 
   private Classifier classifier;
 

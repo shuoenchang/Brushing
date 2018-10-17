@@ -32,8 +32,8 @@
         android:id="@+id/checkBrush16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/checkBrush09"
-        android:layout_toEndOf="@+id/checkBrush10"
+        android:layout_below="@+id/checkBrush15"
+        android:layout_toEndOf="@+id/checkBrush14"
         android:clickable="false"
         android:text="16" />
 
@@ -47,13 +47,13 @@
         android:text="02" />
 
     <CheckBox
-        android:id="@+id/checkBrush14"
+        android:id="@+id/checkBrush10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/checkBrush12"
-        android:layout_toEndOf="@+id/checkBrush13"
+        android:layout_toEndOf="@+id/checkBrush11"
         android:clickable="false"
-        android:text="14" />
+        android:text="10" />
 
     <CheckBox
         android:id="@+id/checkBrush06"
@@ -65,13 +65,13 @@
         android:text="06" />
 
     <CheckBox
-        android:id="@+id/checkBrush09"
+        android:id="@+id/checkBrush15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/checkBrush10"
+        android:layout_below="@+id/checkBrush07"
+        android:layout_toEndOf="@+id/checkBrush14"
         android:clickable="false"
-        android:text="09" />
+        android:text="15" />
 
     <CheckBox
         android:id="@+id/checkBrush03"
@@ -92,13 +92,13 @@
         android:text="01" />
 
     <CheckBox
-        android:id="@+id/checkBrush10"
+        android:id="@+id/checkBrush14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/checkBrush11"
+        android:layout_below="@+id/checkBrush06"
+        android:layout_toEndOf="@+id/checkBrush13"
         android:clickable="false"
-        android:text="10" />
+        android:text="14" />
 
     <CheckBox
         android:id="@+id/checkBrush04"
@@ -131,46 +131,132 @@
         android:id="@+id/checkBrush12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/checkBrush11"
-        android:layout_toEndOf="@+id/checkBrush08"
+        android:layout_below="@+id/checkBrush13"
         android:clickable="false"
         android:text="12" />
-
-    <CheckBox
-        android:id="@+id/checkBrush13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/checkBrush12"
-        android:layout_toEndOf="@+id/checkBrush07"
-        android:clickable="false"
-        android:text="13" />
 
     <CheckBox
         android:id="@+id/checkBrush11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/checkBrush01"
+        android:layout_below="@+id/checkBrush12"
         android:clickable="false"
         android:text="11" />
 
     <CheckBox
-        android:id="@+id/checkBrush15"
+        android:id="@+id/checkBrush13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/checkBrush04"
+        android:layout_below="@+id/checkBrush05"
+        android:clickable="false"
+        android:text="13" />
+
+    <CheckBox
+        android:id="@+id/checkBrush09"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkBrush12"
         android:layout_toEndOf="@+id/checkBrush10"
         android:clickable="false"
-        android:text="15" />
+        android:text="09" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkBrush02"
+        android:layout_centerVertical="false"
+        android:layout_marginStart="134dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/checkBrush04"
+        android:text="  上"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkBrush14"
+        android:layout_centerVertical="false"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/checkBrush12"
+        android:text="  下"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/checkBrush02"
+        android:layout_marginStart="-1dp"
+        android:layout_toEndOf="@id/checkBrush01"
+        android:text=" 頰側"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/divider"
+        android:layout_centerVertical="false"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="4dp"
+        android:layout_toEndOf="@id/checkBrush07"
+        android:text=" 舌側"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/divider"
+        android:layout_centerVertical="false"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="4dp"
+        android:layout_toEndOf="@+id/checkBrush09"
+        android:text=" 舌側"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkBrush16"
+        android:layout_centerVertical="false"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="3dp"
+        android:layout_toEndOf="@+id/checkBrush09"
+        android:text=" 頰側"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="131dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkBrush11"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="14dp"
+        android:text="目前位置："
+        android:textSize="20sp" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="190dp"
+        android:layout_height="2dp"
+        android:layout_alignBottom="@+id/checkBrush05"
+        android:layout_alignParentStart="true"
+        android:background="?android:attr/listDivider" />
 
     <org.brush.demo.RecognitionScoreView
         android:id="@+id/results"
-        android:layout_width="155dp"
-        android:layout_height="50dp"
+        android:layout_width="153dp"
+        android:layout_height="31dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="69dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="197dp"
+        android:layout_toEndOf="@+id/textView7"
         android:layout_weight="1" />
 
     <org.brush.demo.AutoFitTextureView
