@@ -19,27 +19,176 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <org.brush.demo.RecognitionScoreView
-        android:id="@+id/results"
-        android:layout_width="match_parent"
-        android:layout_height="140dp"
+    <CheckBox
+        android:id="@+id/checkBrush05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkBrush04"
+        android:layout_alignParentStart="true"
+        android:clickable="false"
+        android:text="05" />
+
+    <CheckBox
+        android:id="@+id/checkBrush16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkBrush09"
+        android:layout_toEndOf="@+id/checkBrush10"
+        android:clickable="false"
+        android:text="16" />
+
+    <CheckBox
+        android:id="@+id/checkBrush02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/checkBrush03"
+        android:clickable="false"
+        android:text="02" />
+
+    <CheckBox
+        android:id="@+id/checkBrush14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkBrush12"
+        android:layout_toEndOf="@+id/checkBrush13"
+        android:clickable="false"
+        android:text="14" />
+
+    <CheckBox
+        android:id="@+id/checkBrush06"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkBrush04"
+        android:layout_toEndOf="@+id/checkBrush05"
+        android:clickable="false"
+        android:text="06" />
+
+    <CheckBox
+        android:id="@+id/checkBrush09"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/checkBrush10"
+        android:clickable="false"
+        android:text="09" />
+
+    <CheckBox
+        android:id="@+id/checkBrush03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:clickable="false"
+        android:text="03" />
+
+    <CheckBox
+        android:id="@+id/checkBrush01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/checkBrush02"
+        android:clickable="false"
+        android:text="01" />
+
+    <CheckBox
+        android:id="@+id/checkBrush10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/checkBrush11"
+        android:clickable="false"
+        android:text="10" />
+
+    <CheckBox
+        android:id="@+id/checkBrush04"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkBrush03"
+        android:layout_alignParentStart="true"
+        android:clickable="false"
+        android:text="04" />
+
+    <CheckBox
+        android:id="@+id/checkBrush07"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkBrush08"
+        android:layout_toEndOf="@+id/checkBrush06"
+        android:clickable="false"
+        android:text="07" />
+
+    <CheckBox
+        android:id="@+id/checkBrush08"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkBrush01"
+        android:layout_toEndOf="@+id/checkBrush02"
+        android:clickable="false"
+        android:text="08" />
+
+    <CheckBox
+        android:id="@+id/checkBrush12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkBrush11"
+        android:layout_toEndOf="@+id/checkBrush08"
+        android:clickable="false"
+        android:text="12" />
+
+    <CheckBox
+        android:id="@+id/checkBrush13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkBrush12"
+        android:layout_toEndOf="@+id/checkBrush07"
+        android:clickable="false"
+        android:text="13" />
+
+    <CheckBox
+        android:id="@+id/checkBrush11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/checkBrush01"
+        android:clickable="false"
+        android:text="11" />
+
+    <CheckBox
+        android:id="@+id/checkBrush15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkBrush04"
+        android:layout_toEndOf="@+id/checkBrush10"
+        android:clickable="false"
+        android:text="15" />
+
+    <org.brush.demo.RecognitionScoreView
+        android:id="@+id/results"
+        android:layout_width="155dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="69dp"
+        android:layout_marginTop="96dp"
         android:layout_weight="1" />
 
     <org.brush.demo.AutoFitTextureView
         android:id="@+id/texture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="0dp"
         android:layout_weight="1" />
 
     <ImageView
         android:id="@+id/tooth_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
         android:layout_below="@+id/results"
+        android:layout_alignParentStart="true"
         android:layout_marginStart="8dp"
         android:src="@drawable/tooth_00" />
 

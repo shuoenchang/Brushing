@@ -45,6 +45,7 @@ import android.content.SharedPreferences;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 
 import java.io.IOException;
@@ -327,7 +328,7 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
       }
     }
     if (SAVE_PREVIEW_BITMAP) {
-      ImageUtils.saveBitmap(croppedBitmap,filename+".png");
+      //ImageUtils.saveBitmap(croppedBitmap,filename+".png");
       ByteArrayOutputStream baos = new ByteArrayOutputStream();
       croppedBitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
       byte[] b = baos.toByteArray();
@@ -357,6 +358,14 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
                 int resID = getResources().getIdentifier(fileName , "drawable", getPackageName());
                 ImageView img = (ImageView) findViewById(R.id.tooth_view);
                 img.setImageResource(resID);
+
+                String check = "checkBrush" + results.get(0).getTitle().charAt(0)
+                        + results.get(0).getTitle().charAt(1);
+                int chkID = getResources().getIdentifier(check, "id", getPackageName());
+                CheckBox cbCheckbox = (CheckBox) findViewById(chkID);
+                Log.i("cbCheckbox", check);
+                Log.i("cbCheckbox", Integer.toString(chkID));
+                cbCheckbox.setChecked(true);
 
               Log.i("TextOutput", fileName);
             }
