@@ -80,13 +80,13 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
   // --input_node_names="Mul" \
   // --output_node_names="final_result" \
   // --input_binary=truew
-  private static final int INPUT_SIZE = 150;
-  private static final int IMAGE_MEAN = 128;
-  private static final float IMAGE_STD = 1f;
-  private static final String INPUT_NAME = "input_1";
-  private static final String OUTPUT_NAME = "dense_2/Softmax";
+  private static final int INPUT_SIZE = 224;
+  private static final int IMAGE_MEAN = 0;
+  private static final float IMAGE_STD = 255;
+  private static final String INPUT_NAME = "input_5";
+  private static final String OUTPUT_NAME = "reshape_2/Reshape";
 
-  private static final String MODEL_FILE = "file:///android_asset/rounded_vgg.pb";
+  private static final String MODEL_FILE = "file:///android_asset/mobilenet.pb";
   private static final String LABEL_FILE =
       "file:///android_asset/constant_labels.txt";
 
