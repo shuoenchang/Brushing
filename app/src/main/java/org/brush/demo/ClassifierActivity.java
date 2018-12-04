@@ -81,13 +81,13 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
   // --input_node_names="Mul" \
   // --output_node_names="final_result" \
   // --input_binary=truew
-  private static final int INPUT_SIZE = 150;
+  private static final int INPUT_SIZE = 224;
   private static final int IMAGE_MEAN = 0;
   private static final float IMAGE_STD = 255;
-  private static final String INPUT_NAME = "input_1";
-  private static final String OUTPUT_NAME = "dense_2/Softmax";
+    private static final String INPUT_NAME = "input_2";
+    private static final String OUTPUT_NAME = "dense_10/Softmax";
 
-  private static final String MODEL_FILE = "file:///android_asset/mobilenet_500.pb";
+    private static final String MODEL_FILE = "file:///android_asset/mobilenet_550.pb";
   private static final String LABEL_FILE =
       "file:///android_asset/constant_labels.txt";
 
@@ -121,6 +121,9 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
   private BorderedText borderedText;
 
   private long lastProcessingTimeMs;
+
+    private int usage = 0;
+    private int lastBrush = 0;
 
   @Override
   protected int getLayoutId() {
@@ -355,20 +358,28 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
               public void run() {
                 String fileName = "tooth_" + results.get(0).getTitle().charAt(0)
                         + results.get(0).getTitle().charAt(1);
-                int resID = getResources().getIdentifier(fileName , "drawable", getPackageName());
+                  int resID = getResources().getIdentifier(fileName, "drawable", getPackageName());
+                  if (lastBrush == resID) {
+                      usage = usage + 1;
+                  } else {
+                      lastBrush = resID;
+                      usage = 0;
+                  }
+                  Log.i("usage", Integer.toString(usage));
                 ImageView img = (ImageView) findViewById(R.id.tooth_view);
                 img.setImageResource(resID);
 
-                String check = "checkBrush" + results.get(0).getTitle().charAt(0)
-                        + results.get(0).getTitle().charAt(1);
-                int chkID = getResources().getIdentifier(check, "id", getPackageName());
-                CheckBox cbCheckbox = (CheckBox) findViewById(chkID);
-                Log.i("cbCheckbox", check);
-                Log.i("cbCheckbox", Integer.toString(chkID));
-                cbCheckbox.setChecked(true);
-
-              Log.i("TextOutput", fileName);
-            }
+                  if (!"tooth_00".equals(fileName) && usage > 2) {
+                      String check = "checkBrush" + results.get(0).getTitle().charAt(0)
+                              + results.get(0).getTitle().charAt(1);
+                      int chkID = getResources().getIdentifier(check, "id", getPackageName());
+                      CheckBox cbCheckbox = (CheckBox) findViewById(chkID);
+                      Log.i("cbCheckbox", check);
+                      Log.i("cbCheckbox", Integer.toString(chkID));
+                      cbCheckbox.setChecked(true);
+                  }
+                  Log.i("TextOutput", fileName);
+              }
         });
 
 
